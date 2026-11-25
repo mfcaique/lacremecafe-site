@@ -1,0 +1,653 @@
+
+/* =====================================================
+   LA CRÈME CAFÉ — CONTATO
+   Identidade visual: creme, bege e marrom
+===================================================== */
+
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+:root {
+    --fundo: #F3EEE7;
+    --papel: #F5D9BE;
+    --bege: #E8C49F;
+    --texto: #332820;
+    --marrom: #76523D;
+    --argila: #B8795D;
+    --linha: #DED2C5;
+    --branco: #FFF8F0;
+}
+
+.contatos-container {
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--texto);
+}
+
+.contatos-container * {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 2. BANNER */
+
+.banner-contato {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-contato img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.88);
+}
+
+
+/* 3. APRESENTAÇÃO */
+
+.contato-intro {
+    text-align: center;
+    padding: 75px 20px 65px;
+    background: var(--bege);
+}
+
+.etiqueta-contato {
+    display: block;
+    color: var(--argila);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.contato-intro h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 500;
+    margin: 16px 0;
+    color: var(--texto);
+}
+
+.contato-intro p {
+    max-width: 600px;
+    margin: auto;
+    color: #776B61;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.detalhes-cafe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 18px 0 25px;
+}
+
+.detalhes-cafe span {
+    color: var(--marrom);
+    font-size: 21px;
+}
+
+
+/* 4. ÁREA PRINCIPAL */
+
+.contato-principal {
+    background: var(--bege);
+    padding: 35px 7% 90px;
+}
+
+.contato-grid {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+/* 5. INFORMAÇÕES */
+
+.informacoes {
+    background: #E6CDBB;
+    border: 1px solid rgba(118, 82, 61, 0.08);
+    padding: 45px;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.informacoes h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(29px, 3vw, 37px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--texto);
+    margin: 18px 0;
+}
+
+.descricao-info {
+    color: #776B61;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    padding: 20px 0;
+    border-top: 1px solid rgba(118, 82, 61, 0.2);
+}
+
+.contato-icone {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(118, 82, 61, 0.4);
+    border-radius: 50%;
+
+    font-size: 10px;
+    color: var(--marrom);
+    letter-spacing: 1px;
+}
+
+.contato-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contato-item span {
+    color: #776B61;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.contato-item a {
+    color: var(--marrom);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s;
+}
+
+.contato-item a:hover {
+    color: var(--argila);
+}
+
+.mensagem-final {
+    margin-top: auto;
+    padding-top: 30px;
+
+    color: var(--marrom);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.mensagem-final span {
+    margin-right: 8px;
+    color: var(--argila);
+}
+
+
+/* 6. FORMULÁRIO */
+
+.formulario-contato {
+    background: var(--fundo);
+    padding: 45px;
+    border: 1px solid rgba(118, 82, 61, 0.08);
+    border-radius: 4px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.formulario-contato h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(29px, 3vw, 37px);
+    font-weight: 500;
+    color: var(--texto);
+    margin: 18px 0 10px;
+}
+
+.descricao-form {
+    color: #776B61;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+
+/* CAMPOS */
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    color: var(--marrom);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 14px 15px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5D8CC;
+    border-radius: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: var(--texto);
+
+    outline: none;
+    transition: border-color 0.3s,
+                box-shadow 0.3s;
+}
+
+.campo input {
+    height: 47px;
+}
+
+.campo textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #A69A90;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--marrom);
+    box-shadow: 0 0 0 3px rgba(118, 82, 61, 0.08);
+}
+
+
+/* BOTÃO */
+
+.formulario-contato button {
+    width: 100%;
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--marrom);
+    color: var(--branco);
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: background 0.3s,
+                transform 0.3s;
+}
+
+.formulario-contato button:hover {
+    background: var(--texto);
+    transform: translateY(-2px);
+}
+
+.formulario-contato button span {
+    font-size: 17px;
+}
+
+
+/* 7. EFEITOS DOS CARDS */
+
+@media (hover: hover) {
+
+    .informacoes:hover,
+    .formulario-contato:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(43, 35, 22, 0.08);
+    }
+
+}
+
+
+/* 8. CHAMADA FINAL */
+
+.contato-chamada {
+    text-align: center;
+    padding: 85px 20px 95px;
+    background: var(--papel);
+}
+
+.contato-chamada h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--texto);
+    margin: 20px 0;
+}
+
+.contato-chamada h2 span {
+    color: var(--argila);
+    font-style: italic;
+}
+
+.contato-chamada p {
+    max-width: 520px;
+    margin: 0 auto;
+    color: #776B61;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 30px;
+    padding: 16px 28px;
+
+    border: 1px solid var(--marrom);
+    color: var(--marrom);
+
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.botao-voltar:hover {
+    background: var(--marrom);
+    color: var(--branco);
+}
+
+.botao-voltar span {
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   9. FOOTER
+===================================================== */
+
+.rodape {
+    background: var(--texto);
+    color: var(--fundo);
+    padding: 55px 7% 0;
+}
+
+.rodape-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 65px;
+
+    padding-bottom: 45px;
+}
+
+
+/* MARCA */
+
+.rodape-marca img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 18px;
+}
+
+.rodape-marca p {
+    max-width: 280px;
+    color: #C9B9AA;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.rodape-marca span {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--bege);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* LINKS */
+
+.rodape h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--bege);
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.rodape-links,
+.rodape-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rodape-links a,
+.rodape-contato a {
+    display: inline-block;
+    margin-bottom: 13px;
+
+    color: #C9B9AA;
+    text-decoration: none;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    transition: color 0.3s;
+    overflow-wrap: anywhere;
+}
+
+.rodape-links a:hover,
+.rodape-contato a:hover {
+    color: var(--bege);
+}
+
+
+/* COPYRIGHT */
+
+.rodape-final {
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 22px 0;
+
+    border-top: 1px solid rgba(232, 196, 159, 0.2);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.rodape-final p,
+.rodape-final span {
+    color: #BDAE9F;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.rodape-final span {
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   10. TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .contato-grid {
+        gap: 18px;
+    }
+
+    .informacoes,
+    .formulario-contato {
+        padding: 30px;
+    }
+
+    .rodape-container {
+        gap: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   11. CELULARES
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .banner-contato {
+        height: 240px;
+    }
+
+    .contato-intro {
+        padding: 60px 22px 45px;
+    }
+
+    .contato-intro h1 {
+        font-size: 40px;
+    }
+
+    .contato-principal {
+        padding: 25px 20px 65px;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .informacoes,
+    .formulario-contato {
+        padding: 30px 25px;
+    }
+
+    .informacoes h2,
+    .formulario-contato h2 {
+        font-size: 31px;
+    }
+
+    .contato-chamada {
+        padding: 65px 22px;
+    }
+
+    .rodape {
+        padding: 45px 25px 0;
+    }
+
+    .rodape-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 35px;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+}
+
+
+/* =====================================================
+   12. TELAS PEQUENAS
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .banner-contato {
+        height: 200px;
+    }
+
+    .informacoes,
+    .formulario-contato {
+        padding: 25px 18px;
+    }
+
+    .contato-item {
+        gap: 12px;
+    }
+
+    .contato-item a {
+        font-size: 11px;
+    }
+
+    .contato-intro h1 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   13. ACESSIBILIDADE
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .informacoes,
+    .formulario-contato,
+    .contato-item a,
+    .formulario-contato button,
+    .botao-voltar,
+    .rodape a {
+        transition: none;
+    }
+
+}

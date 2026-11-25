@@ -1,0 +1,547 @@
+/* =========================================================
+   LA CRÈME CAFÉ — CERÂMICA
+   Identidade visual: creme, bege e marrom café
+   CSS exclusivo desta página
+   ========================================================= */
+
+
+/* 1. PALETA DE CORES */
+
+:root {
+    --fundo: #F3EEE7;
+    --papel: #F5D9BE;
+    --bege: #E8C49F;
+    --texto: #3B281D;
+    --marrom: #68432F;
+    --argila: #B8795D;
+    --cinza: #786657;
+    --linha: #D6B99E;
+}
+
+
+/* 2. CONFIGURAÇÕES GERAIS */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.ceramica-container {
+    width: 100%;
+    overflow: hidden;
+    color: var(--texto);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ceramica-container *,
+.rodape * {
+    box-sizing: border-box;
+}
+
+
+/* 3. APRESENTAÇÃO */
+
+.ceramica-container .hero {
+    min-height: 440px;
+    padding: 100px 8% 85px;
+    background: var(--papel);
+}
+
+.ceramica-container .etiqueta {
+    display: block;
+    color: var(--argila);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.ceramica-container .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(46px, 7vw, 76px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 22px 0;
+    color: var(--texto);
+}
+
+.ceramica-container .hero h1 em {
+    color: var(--argila);
+    font-style: normal;
+}
+
+.ceramica-container .hero p {
+    max-width: 430px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ceramica-container .link-destaque {
+    display: inline-block;
+    margin-top: 25px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--argila);
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.ceramica-container .link-destaque:hover {
+    color: var(--argila);
+    letter-spacing: 2.5px;
+}
+
+
+/* 4. COLEÇÃO */
+
+.ceramica-container .colecao {
+    padding: 85px 7%;
+    background: var(--bege);
+}
+
+.ceramica-container .cabecalho-secao {
+    text-align: center;
+}
+
+.ceramica-container .cabecalho-secao h2,
+.ceramica-container .processo h2,
+.ceramica-container .ideias h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.ceramica-container .cabecalho-secao p {
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* 5. FILTROS */
+
+.ceramica-container .filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 35px 0;
+}
+
+.ceramica-container .filtro {
+    padding: 10px 18px;
+    border: 1px solid rgba(104, 67, 47, .15);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--texto);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.ceramica-container .filtro:hover,
+.ceramica-container .filtro.ativo {
+    background: var(--texto);
+    color: #FFF8F0;
+    border-color: var(--texto);
+}
+
+
+/* 6. GRADE DE PRODUTOS */
+
+.ceramica-container .grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 22px;
+}
+
+.ceramica-container .produto {
+    min-width: 0;
+    background: var(--papel);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.ceramica-container .produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(59, 40, 29, .09);
+}
+
+/* Garante que produtos filtrados desapareçam */
+
+.ceramica-container .produto[hidden] {
+    display: none !important;
+}
+
+
+/* 7. IMAGENS */
+
+.ceramica-container .imagem-produto {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #E7DDD1;
+}
+
+.ceramica-container .imagem-produto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s ease;
+}
+
+.ceramica-container .produto:hover .imagem-produto img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .ceramica-container .imagem-produto {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ceramica-container .imagem-produto {
+        height: 180px;
+    }
+}
+
+@media (max-width: 360px) {
+    .ceramica-container .imagem-produto {
+        height: 230px;
+    }
+}
+
+.ceramica-container .imagem-vazia {
+    min-height: 250px;
+    display: grid;
+    place-items: center;
+    background: #E7DDD1;
+    color: #9B8878;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* 8. INFORMAÇÕES DOS PRODUTOS */
+
+.ceramica-container .info {
+    padding: 18px 20px 22px;
+}
+
+.ceramica-container .numero {
+    color: var(--argila);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.ceramica-container .info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 8px 0;
+    color: var(--texto);
+}
+
+.ceramica-container .info p {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* 9. PROCESSO ARTESANAL */
+
+.ceramica-container .processo {
+    padding: 80px 8%;
+    background: #DFCCBD;
+}
+
+.ceramica-container .processo h2 {
+    margin-bottom: 42px;
+}
+
+.ceramica-container .etapas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+}
+
+.ceramica-container .etapas div {
+    padding-top: 18px;
+    border-top: 1px solid #B99A84;
+}
+
+.ceramica-container .etapas span {
+    color: var(--argila);
+    font-size: 11px;
+}
+
+.ceramica-container .etapas h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin: 12px 0 8px;
+}
+
+.ceramica-container .etapas p {
+    color: #66584E;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* 10. IDEIAS */
+
+.ceramica-container .ideias {
+    padding: 80px 7%;
+    background: var(--papel);
+}
+
+.ceramica-container .ideias h2 {
+    margin-bottom: 12px;
+}
+
+.ceramica-container .ideias ul {
+    max-width: 700px;
+    padding-left: 20px;
+}
+
+.ceramica-container .ideias li {
+    color: #66584E;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* 11. RODAPÉ */
+
+.rodape {
+    padding: 55px 7% 25px;
+    background: #332820;
+    color: var(--fundo);
+}
+
+.rodape-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.rodape-marca img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.rodape-marca p {
+    max-width: 280px;
+    color: #C9B9AA;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.rodape-links h3,
+.rodape-contato h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #E8C49F;
+    margin-bottom: 18px;
+}
+
+.rodape-links a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 11px;
+    color: #C9B9AA;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .3s ease;
+}
+
+.rodape-links a:hover {
+    color: #E8C49F;
+    transform: translateX(3px);
+}
+
+.rodape-contato p {
+    margin-bottom: 9px;
+    color: #C9B9AA;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.rodape-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 45px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(232, 196, 159, .2);
+}
+
+.rodape-final p,
+.rodape-final span {
+    color: #AFA093;
+    font-size: 10px;
+}
+
+.rodape-final span {
+    letter-spacing: 2px;
+}
+
+
+/* 12. TABLETS */
+
+@media (max-width: 900px) {
+
+    .ceramica-container .colecao {
+        padding: 70px 5%;
+    }
+
+    .ceramica-container .grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 16px;
+    }
+
+    .ceramica-container .imagem-vazia {
+        min-height: 220px;
+    }
+
+    .rodape-container {
+        gap: 30px;
+    }
+}
+
+
+/* 13. CELULARES */
+
+@media (max-width: 600px) {
+
+    .ceramica-container .hero {
+        min-height: auto;
+        padding: 75px 7%;
+    }
+
+    .ceramica-container .hero h1 {
+        font-size: 43px;
+    }
+
+    .ceramica-container .hero p {
+        font-size: 12px;
+    }
+
+    .ceramica-container .colecao {
+        padding: 60px 6%;
+    }
+
+    .ceramica-container .cabecalho-secao h2,
+    .ceramica-container .processo h2,
+    .ceramica-container .ideias h2 {
+        font-size: 35px;
+    }
+
+    .ceramica-container .filtros {
+        gap: 8px;
+        margin: 28px 0;
+    }
+
+    .ceramica-container .filtro {
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+
+    .ceramica-container .grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .ceramica-container .imagem-vazia {
+        min-height: 180px;
+    }
+
+    .ceramica-container .info {
+        padding: 14px 12px 17px;
+    }
+
+    .ceramica-container .info h3 {
+        font-size: 23px;
+    }
+
+    .ceramica-container .info p {
+        font-size: 11px;
+    }
+
+    .ceramica-container .processo,
+    .ceramica-container .ideias {
+        padding: 60px 7%;
+    }
+
+    .ceramica-container .etapas {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .rodape {
+        padding: 45px 7% 22px;
+    }
+
+    .rodape-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .rodape-marca {
+        grid-column: 1 / -1;
+    }
+
+    .rodape-final {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+    }
+}
+
+
+/* 14. TELAS MUITO PEQUENAS */
+
+@media (max-width: 360px) {
+
+    .ceramica-container .grade {
+        grid-template-columns: 1fr;
+    }
+
+    .ceramica-container .imagem-vazia {
+        min-height: 230px;
+    }
+
+}
+
+
+/* 15. ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .ceramica-container *,
+    .rodape * {
+        transition: none !important;
+    }
+
+}

@@ -1,0 +1,203 @@
+/* =====================================================
+   LA CRÈME CAFÉ — MENU GLOBAL
+   Arquivo: menu.css
+
+   Este arquivo é compartilhado por todas as páginas.
+   Controla o cabeçalho, logotipo e navegação.
+===================================================== */
+
+
+/* =====================================================
+   1. CONFIGURAÇÕES GERAIS
+===================================================== */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e8c49f;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   2. CABEÇALHO
+===================================================== */
+
+header {
+    width: 100%;
+    background-color: #e8c49f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+    z-index: 100;
+}
+
+
+/* =====================================================
+   3. CONTAINER DO MENU
+===================================================== */
+
+.caixa {
+    max-width: 1450px;
+    min-height: 100px;
+    margin: 0 auto;
+    padding: 0 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   4. LOGOTIPO
+===================================================== */
+
+.logo-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+    border-radius: 50%;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
+
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   5. NAVEGAÇÃO
+===================================================== */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: block;
+    margin: 0;
+}
+
+nav a {
+    position: relative;
+
+    display: inline-block;
+
+    color: #814c35;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    padding: 10px 0;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Linha animada abaixo dos links */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 1px;
+
+    background-color: #2b2316;
+
+    transition: width 0.3s ease;
+}
+
+
+/* Efeito ao passar o mouse */
+
+nav a:hover {
+    color: #2b2316;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   6. RESPONSIVIDADE — TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .caixa {
+        padding: 0 25px;
+    }
+
+    nav ul {
+        gap: 24px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   7. RESPONSIVIDADE — CELULARES
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .caixa {
+        min-height: auto;
+
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 15px;
+
+        padding: 15px 15px 20px;
+    }
+
+    .logo-img {
+        width: 65px;
+        height: 65px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 22px;
+    }
+
+    nav a {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+}

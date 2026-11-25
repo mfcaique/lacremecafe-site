@@ -1,0 +1,675 @@
+/* =========================================================
+   LA CRÈME CAFÉ — PÁGINA CONHEÇA
+   Identidade visual: elegante, artesanal e acolhedora
+========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f5d9be;
+    overflow-x: hidden;
+}
+
+.conheca-container {
+    flex: 1;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    color: #49301e;
+
+    box-sizing: border-box;
+}
+
+.conheca-container * {
+    box-sizing: border-box;
+}
+
+.section-tag {
+    display: inline-block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #92745b;
+}
+
+
+/* =========================================================
+   2. NOSSA HISTÓRIA
+========================================================= */
+
+.historia-section {
+    position: relative;
+
+    max-width: 1240px;
+    margin: 75px auto 110px;
+
+    padding: 85px 100px;
+
+    background-color: #fff8f0;
+
+    border: 1px solid rgba(73, 48, 30, 0.06);
+    border-radius: 5px;
+
+    box-shadow: 0 15px 45px rgba(73, 48, 30, 0.04);
+
+    overflow: hidden;
+}
+
+.historia-content {
+    max-width: 820px;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+.historia-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(38px, 5vw, 55px);
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #302219;
+
+    margin: 20px 0 18px;
+}
+
+.historia-content h1 em {
+    color: #936c4d;
+    font-weight: 400;
+}
+
+.titulo-detalhe {
+    width: 55px;
+    height: 2px;
+
+    background-color: #a77c59;
+
+    margin: 30px 0;
+}
+
+.historia-content p {
+    font-size: 15px;
+    line-height: 2;
+
+    color: #655548;
+
+    margin: 0 0 22px;
+}
+
+.historia-assinatura {
+    display: block;
+
+    margin-top: 35px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+
+    color: #927052;
+}
+
+.historia-numero {
+    position: absolute;
+
+    right: 45px;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    color: #b99b7c;
+}
+
+.historia-numero span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    line-height: 1;
+}
+
+.historia-numero small {
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   3. TÍTULOS DAS SEÇÕES
+========================================================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 500;
+
+    color: #302219;
+
+    margin: 15px 0 10px;
+}
+
+.section-heading p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #766352;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   4. MISSÃO, VISÃO E VALORES
+========================================================= */
+
+.diretrizes-section {
+    max-width: 1240px;
+
+    margin: 0 auto 115px;
+    padding: 0 25px;
+}
+
+.diretrizes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.diretriz-card {
+    position: relative;
+
+    min-height: 310px;
+
+    padding: 35px 32px;
+
+    background-color: #fff8f0;
+
+    border: 1px solid rgba(73, 48, 30, 0.08);
+    border-radius: 5px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.diretriz-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 30px rgba(73, 48, 30, 0.08);
+}
+
+.diretriz-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.diretriz-numero {
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: #a88a6c;
+    font-weight: 600;
+}
+
+.diretriz-simbolo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid #d8b997;
+    border-radius: 50%;
+
+    color: #765238;
+
+    font-size: 25px;
+}
+
+.diretriz-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 29px;
+    font-weight: 600;
+
+    color: #382719;
+
+    margin: 0 0 14px;
+}
+
+.card-detalhe {
+    width: 35px;
+    height: 2px;
+
+    background-color: #b58a65;
+
+    margin-bottom: 20px;
+}
+
+.diretriz-card p {
+    font-size: 14px;
+    line-height: 1.9;
+
+    color: #6c5b4d;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   5. RESPONSABILIDADE SOCIAL
+========================================================= */
+
+.social-section {
+    background-color: #fff8f0;
+
+    padding: 90px 25px 100px;
+}
+
+.social-intro {
+    max-width: 850px;
+
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.social-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    color: #302219;
+
+    margin: 18px 0 22px;
+}
+
+.social-intro h2 em {
+    color: #936c4d;
+    font-weight: 400;
+}
+
+.social-intro p {
+    font-size: 14px;
+    line-height: 2;
+
+    color: #655548;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   6. CARDS DOS OBJETIVOS SOCIAIS
+========================================================= */
+
+.ods-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    gap: 18px;
+}
+
+.ods-item {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px 30px;
+
+    background-color: #f7ede2;
+
+    border: 1px solid rgba(73, 48, 30, 0.07);
+    border-radius: 5px;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.ods-item:hover {
+    transform: translateX(5px);
+    background-color: #f3e3d1;
+}
+
+.ods-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Cores oficiais dos ODS */
+
+.ods-3 {
+    background-color: #4c9f38;
+}
+
+.ods-10 {
+    background-color: #dd1367;
+}
+
+.ods-content {
+    flex: 1;
+}
+
+.ods-label {
+    display: block;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #92745b;
+
+    margin-bottom: 7px;
+}
+
+.ods-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+    font-weight: 600;
+
+    color: #382719;
+
+    margin: 0 0 6px;
+}
+
+.ods-content p {
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #6c5b4d;
+
+    margin: 0;
+}
+
+.ods-seta {
+    font-size: 22px;
+    color: #a98a6c;
+}
+
+
+/* =========================================================
+   7. SEÇÃO FINAL
+========================================================= */
+
+.final-section {
+    padding: 90px 25px;
+
+    background-color: #302219;
+
+    text-align: center;
+}
+
+.final-section .section-tag {
+    color: #c6a989;
+}
+
+.final-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(35px, 5vw, 48px);
+    font-weight: 500;
+
+    color: #fff8f0;
+
+    margin: 20px 0 15px;
+}
+
+.final-section h2 em {
+    color: #d9b895;
+    font-weight: 400;
+}
+
+.final-section p {
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #d2c0ae;
+
+    margin-bottom: 30px;
+}
+
+.final-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    border: 1px solid #c7a989;
+
+    color: #f8eadb;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.final-link:hover {
+    background-color: #f8eadb;
+    color: #302219;
+}
+
+.final-link span {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   8. RODAPÉ
+========================================================= */
+
+footer {
+    padding: 35px 7%;
+
+    background-color: #241b15;
+    color: #f3eee7;
+}
+
+footer p {
+    color: #c9b9aa;
+    font-size: 12px;
+}
+
+footer span {
+    color: #d0bdab;
+
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   9. RESPONSIVIDADE — TABLETS
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .historia-section {
+        margin: 50px 25px 80px;
+        padding: 60px 45px;
+    }
+
+    .diretrizes-grid {
+        gap: 15px;
+    }
+
+    .diretriz-card {
+        padding: 30px 22px;
+        min-height: 330px;
+    }
+
+    .diretriz-card h3 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   10. RESPONSIVIDADE — CELULARES
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .historia-section {
+        margin: 30px 15px 70px;
+
+        padding: 45px 25px 65px;
+    }
+
+    .historia-content h1 {
+        font-size: 38px;
+    }
+
+    .historia-content p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .historia-numero {
+        right: 20px;
+        bottom: 15px;
+    }
+
+    .historia-numero span {
+        font-size: 35px;
+    }
+
+    .diretrizes-section {
+        margin-bottom: 75px;
+        padding: 0 15px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .diretrizes-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .diretriz-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .diretriz-topo {
+        margin-bottom: 20px;
+    }
+
+    .social-section {
+        padding: 65px 18px;
+    }
+
+    .social-intro {
+        margin-bottom: 35px;
+    }
+
+    .social-intro h2 {
+        font-size: 36px;
+    }
+
+    .social-intro p {
+        font-size: 13px;
+    }
+
+    .ods-item {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .ods-num {
+        width: 48px;
+        height: 48px;
+        font-size: 17px;
+    }
+
+    .ods-label {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .ods-content h3 {
+        font-size: 20px;
+    }
+
+    .ods-content p {
+        font-size: 12px;
+    }
+
+    .ods-seta {
+        display: none;
+    }
+
+    .final-section {
+        padding: 70px 20px;
+    }
+
+    footer {
+        padding: 30px 25px;
+    }
+
+    footer span {
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+
+}

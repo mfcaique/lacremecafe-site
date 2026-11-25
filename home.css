@@ -1,0 +1,735 @@
+/* =====================================================
+   LA CRÈME CAFÉ — PÁGINA INICIAL
+   Arquivo: home.css
+
+   Contém somente os estilos específicos do Home.
+===================================================== */
+
+
+/* =====================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES
+===================================================== */
+
+:root {
+    --creme: #f5dfc9;
+    --creme-claro: #fff8f0;
+    --bege: #e9c7a6;
+
+    --marrom: #49301e;
+    --marrom-escuro: #302219;
+    --marrom-medio: #78543b;
+
+    --texto: #655343;
+    --branco: #ffffff;
+
+    --fonte-titulo: 'Cormorant Garamond', serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.home-container {
+    width: 100%;
+    color: var(--marrom);
+    font-family: var(--fonte-texto);
+}
+
+
+/* =====================================================
+   2. BANNER PRINCIPAL
+===================================================== */
+
+.hero-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   3. INTRODUÇÃO
+===================================================== */
+
+.introducao {
+    max-width: 850px;
+    margin: 110px auto 95px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.subtitulo {
+    display: block;
+    color: var(--marrom-medio);
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.introducao h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+    font-weight: 500;
+
+    margin: 0 0 25px;
+}
+
+.introducao h1 span {
+    color: var(--marrom-medio);
+    font-style: italic;
+}
+
+.introducao p {
+    max-width: 680px;
+    margin: auto;
+
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+
+.linha-decorativa {
+    width: 65px;
+    height: 2px;
+
+    background-color: var(--marrom-medio);
+
+    margin: 35px auto 0;
+}
+
+
+/* =====================================================
+   4. TÍTULOS DAS SEÇÕES
+===================================================== */
+
+.secao-titulo {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+.secao-titulo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(32px, 4vw, 43px);
+
+    font-weight: 500;
+    line-height: 1.1;
+
+    margin: 0 0 15px;
+}
+
+.secao-titulo p {
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   5. COMO FUNCIONA
+===================================================== */
+
+.como-funciona {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 35px 35px 110px;
+}
+
+.passos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.passo-card {
+    position: relative;
+    background-color: #fff8f0;
+
+    padding: 45px 30px;
+    min-height: 290px;
+
+    text-align: center;
+
+    border-radius: 8px;
+    border: 1px solid rgba(73, 48, 30, 0.08);
+
+    box-shadow: 0 5px 18px rgba(73, 48, 30, 0.04);
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.passo-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 28px rgba(73, 48, 30, 0.10);
+}
+
+
+/* Card em destaque */
+
+.passo-card.destaque {
+    background-color: #fff8f0;
+}
+
+
+
+/* Numeração */
+
+.passo-numero {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    color: #aa8a6b;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+
+/* Ícones */
+
+.passo-icone {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 22px;
+
+    border: 1px solid #d9b997;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+    color: #49301e;
+
+    background-color: #fffaf5;
+}
+
+/* Títulos e textos */
+
+.passo-card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 26px;
+    font-weight: 600;
+
+    color: #49301e;
+
+    margin: 0 0 15px;
+}
+
+.passo-card p {
+    color: #594737;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin: 0;
+}
+
+
+
+/* =====================================================
+   6. OPÇÕES E EXPERIÊNCIAS
+===================================================== */
+
+.opcoes {
+    background-color: var(--creme-claro);
+    padding: 100px 35px 115px;
+}
+
+.opcoes-container {
+    max-width: 1180px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+
+/* Estrutura dos cards */
+
+.opcao-card {
+    background-color: var(--branco);
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.opcao-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(73, 48, 30, 0.10);
+}
+
+
+/* Imagens */
+
+.opcao-imagem {
+    width: 100%;
+    height: 260px;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+
+/* Sobreposição escura das imagens */
+
+.opcao-imagem::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            rgba(35, 23, 15, 0.65),
+            transparent 65%);
+}
+
+
+/* Texto sobre as imagens */
+
+.opcao-imagem span {
+    position: absolute;
+
+    bottom: 25px;
+    left: 30px;
+
+    z-index: 1;
+
+    color: white;
+
+    font-family: var(--fonte-titulo);
+    font-size: 29px;
+    font-weight: 600;
+}
+
+
+/* Imagens individuais */
+
+.cafe-imagem {
+    background-image: url("./img/cafe.png");
+}
+
+.ceramica-imagem {
+    background-image: url("./img/ceramica.png");
+}
+
+
+/* Conteúdo dos cards */
+
+.opcao-conteudo {
+    padding: 35px 35px 40px;
+}
+
+.opcao-categoria {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--marrom-medio);
+}
+
+.opcao-conteudo h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+
+    font-weight: 600;
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.opcao-conteudo p {
+    color: #594737;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    min-height: 75px;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   7. BOTÕES
+===================================================== */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 22px;
+
+    border: 1px solid var(--marrom-medio);
+
+    color: var(--marrom);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+.botao span,
+.botao-claro span {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--marrom);
+    color: var(--creme-claro);
+}
+
+.botao:hover span,
+.botao-claro:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   8. CHAMADA FINAL
+===================================================== */
+
+.chamada-final {
+    padding: 100px 25px;
+
+    text-align: center;
+
+    background-color: var(--marrom-escuro);
+    color: var(--creme-claro);
+}
+
+.chamada-final .subtitulo {
+    color: #c6a98a;
+}
+
+.chamada-final h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(40px, 5vw, 55px);
+
+    font-weight: 500;
+    line-height: 1.1;
+
+    margin: 0 0 20px;
+}
+
+.chamada-final h2 span {
+    color: #d9b997;
+    font-style: italic;
+}
+
+.chamada-final p {
+    max-width: 580px;
+    margin: 0 auto 35px;
+
+    color: #d4c4b5;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* Botão claro */
+
+.botao-claro {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 25px;
+
+    border: 1px solid #d9b997;
+
+    color: var(--creme-claro);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+.botao-claro:hover {
+    background-color: var(--creme-claro);
+    color: var(--marrom);
+}
+
+
+/* =====================================================
+   9. RODAPÉ DO HOME
+===================================================== */
+
+.rodape {
+    background-color: #251c16;
+    color: #e9d8c7;
+
+    padding: 65px 7% 0;
+}
+
+.rodape-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+
+    padding-bottom: 55px;
+}
+
+
+/* Marca */
+
+.rodape-marca img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+.rodape-marca p,
+.rodape-contato p,
+.rodape-links a {
+    color: #d0bdab;
+}
+
+
+/* Títulos do rodapé */
+
+.rodape h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 23px;
+    font-weight: 500;
+
+    margin: 10px 0 22px;
+
+    color: var(--creme);
+}
+
+
+/* Links */
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.rodape-links a {
+    width: fit-content;
+
+    color: #b8a696;
+    font-size: 12px;
+
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: white;
+}
+
+
+/* Parte inferior */
+
+.rodape-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding: 22px 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    color: #a89583;
+
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.rodape-final p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   10. RESPONSIVIDADE — TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .passos-container {
+        gap: 15px;
+    }
+
+    .passo-card {
+        padding: 40px 18px;
+    }
+
+    .opcoes-container {
+        gap: 20px;
+    }
+
+    .rodape-container {
+        gap: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   11. RESPONSIVIDADE — CELULARES
+===================================================== */
+
+@media (max-width: 650px) {
+
+    /* Introdução */
+
+    .introducao {
+        margin: 75px auto;
+    }
+
+    .introducao h1 {
+        font-size: 39px;
+    }
+
+    .introducao p {
+        font-size: 13px;
+    }
+
+
+    /* Como funciona */
+
+    .como-funciona {
+        padding: 20px 20px 75px;
+    }
+
+    .secao-titulo {
+        margin-bottom: 35px;
+    }
+
+    .secao-titulo h2 {
+        font-size: 34px;
+    }
+
+    .passos-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .passo-card {
+        min-height: auto;
+        padding: 40px 25px;
+    }
+
+
+    /* Opções */
+
+    .opcoes {
+        padding: 75px 20px;
+    }
+
+    .opcoes-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .opcao-imagem {
+        height: 220px;
+    }
+
+    .opcao-conteudo {
+        padding: 28px 23px 32px;
+    }
+
+    .opcao-conteudo h3 {
+        font-size: 27px;
+    }
+
+    .opcao-conteudo p {
+        min-height: auto;
+    }
+
+
+    /* Chamada final */
+
+    .chamada-final {
+        padding: 75px 22px;
+    }
+
+
+    /* Rodapé */
+
+    .rodape {
+        padding: 45px 25px 0;
+    }
+
+    .rodape-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .rodape-marca {
+        grid-column: 1 / -1;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+}
+
+
+/* =====================================================
+   12. TELAS MUITO PEQUENAS
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .rodape-container {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-marca {
+        grid-column: auto;
+    }
+
+}

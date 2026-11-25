@@ -1,0 +1,695 @@
+/* =========================================================
+   LA CRÈME CAFÉ — CARDÁPIO
+   Identidade visual: creme, bege e marrom café
+   ========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.cardapio-container {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #3B281D;
+    overflow: hidden;
+}
+
+.cardapio-container * {
+    box-sizing: border-box;
+}
+
+.cardapio-container img {
+    display: block;
+}
+
+
+/* =========================================================
+   2. APRESENTAÇÃO
+   ========================================================= */
+
+.inicio-cardapio {
+    text-align: center;
+    padding: 90px 20px 85px;
+    background-color: #E8C49F;
+}
+
+.subtitulo {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #814C35;
+}
+
+.inicio-cardapio h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.1;
+    color: #3B281D;
+    margin: 25px 0 18px;
+}
+
+.linha-decorativa {
+    width: 65px;
+    height: 1px;
+    background-color: #814C35;
+    margin: 25px auto;
+}
+
+.inicio-cardapio p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #594A47;
+}
+
+.explore {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 32px;
+    padding: 14px 30px;
+
+    border: 1px solid #814C35;
+    border-radius: 40px;
+
+    color: #814C35;
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.explore:hover {
+    background-color: #3B281D;
+    border-color: #3B281D;
+    color: #FFF8F0;
+}
+
+.seta {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.explore:hover .seta {
+    transform: translateY(4px);
+}
+
+
+/* =========================================================
+   3. ÁREA PRINCIPAL DO CARDÁPIO
+   ========================================================= */
+
+.cafes {
+    background-color: #F3EEE7;
+    padding: 85px 7%;
+}
+
+.titulo-categoria {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.titulo-categoria>span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #814C35;
+}
+
+.titulo-categoria h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 4vw, 48px);
+    font-weight: 500;
+    color: #3B281D;
+    margin: 12px 0;
+}
+
+.titulo-categoria p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #786657;
+}
+
+
+/* =========================================================
+   4. CATEGORIAS
+   ========================================================= */
+
+.grupo-cafes,
+.grupo-sucos,
+.grupo-salgados,
+.grupo-confeitaria {
+    margin-bottom: 60px;
+}
+
+.grupo-confeitaria {
+    margin-bottom: 0;
+}
+
+.grupo-cafes>h3,
+.grupo-sucos>h3,
+.grupo-salgados>h3,
+.grupo-confeitaria>h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 31px;
+    font-weight: 500;
+    color: #68432F;
+
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid rgba(129, 76, 53, 0.3);
+}
+
+
+/* =========================================================
+   5. ORGANIZAÇÃO DOS PRODUTOS
+   ========================================================= */
+
+.lista-cafes,
+.lista-sucos,
+.lista-salgados,
+.lista-confeitaria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   6. ESTRUTURA DOS FLIP CARDS
+   ========================================================= */
+
+.flip-card {
+    width: 100%;
+    height: 235px;
+    min-width: 0;
+
+    perspective: 1200px;
+    cursor: pointer;
+
+    border-radius: 12px;
+    position: relative;
+
+    transition: transform 0.3s ease;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    transform-style: preserve-3d;
+
+    transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+
+/* Efeito ao passar o mouse */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .flip-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .flip-card:hover .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:hover .imagem-produto {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* Efeito ao clicar ou tocar */
+
+.flip-card.virado .flip-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Acessibilidade */
+
+.flip-card:focus-visible {
+    outline: 3px solid #814C35;
+    outline-offset: 5px;
+}
+
+
+/* =========================================================
+   7. FRENTE E VERSO
+   ========================================================= */
+
+.frente,
+.verso {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   8. FRENTE DOS CARDS
+   ========================================================= */
+
+.frente {
+    isolation: isolate;
+    background-color: #68432F;
+    color: #FFF8F0;
+    padding: 25px;
+}
+
+.imagem-produto {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.65s ease;
+}
+
+
+/* Camada para melhorar a leitura */
+
+.frente::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(to top,
+            rgba(35, 24, 17, 0.88) 0%,
+            rgba(35, 24, 17, 0.48) 45%,
+            rgba(35, 24, 17, 0.08) 100%);
+}
+
+
+/* Texto da frente */
+
+.frente h4,
+.frente span {
+    position: relative;
+    z-index: 2;
+
+    color: #FFF8F0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.frente h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(23px, 2.5vw, 29px);
+    font-weight: 600;
+    line-height: 1.1;
+
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.frente span {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   9. FRENTE SEM IMAGEM
+   ========================================================= */
+
+.frente.sem-imagem {
+    background: linear-gradient(145deg,
+            #814C35,
+            #3B281D);
+}
+
+
+/* =========================================================
+   10. VERSO DOS CARDS
+   ========================================================= */
+
+.verso {
+    background-color: #3B281D;
+    color: #FFF8F0;
+
+    padding: 30px;
+
+    transform: rotateY(180deg);
+
+    border: 1px solid rgba(214, 174, 133, 0.4);
+}
+
+.verso h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 500;
+
+    color: #E8C49F;
+
+    margin-bottom: 15px;
+}
+
+.verso p {
+    font-size: 12px;
+    line-height: 1.8;
+
+    color: #F3EEE7;
+
+    max-width: 330px;
+}
+
+.verso .preco {
+    display: inline-block;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #E8C49F;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   11. RODAPÉ
+   ========================================================= */
+
+/* =========================================================
+   FOOTER — LA CRÈME CAFÉ
+   ========================================================= */
+
+.rodape-site {
+    background-color: #2B2019;
+    color: #F3EEE7;
+    padding: 55px 7% 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 60px;
+
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}
+
+/* MARCA */
+
+.rodape-marca img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 18px;
+}
+
+.rodape-marca p {
+    color: #D5C3B0;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 1.8;
+}
+
+/* COLUNAS */
+
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.rodape-coluna h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #E8C49F;
+    margin-bottom: 8px;
+}
+
+.rodape-coluna a,
+.rodape-coluna p {
+    color: #D5C3B0;
+    font-size: 12px;
+    line-height: 1.7;
+    text-decoration: none;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.rodape-coluna a:hover {
+    color: #E8C49F;
+}
+
+/* LINHA INFERIOR */
+
+.rodape-final {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(232, 196, 159, 0.18);
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #BBA99A;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .rodape-site {
+        padding: 40px 25px 22px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+    .rodape-marca {
+        grid-column: 1 / -1;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        gap: 12px;
+        line-height: 1.6;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-marca {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   12. TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cafes {
+        padding: 70px 5%;
+    }
+
+    .lista-cafes,
+    .lista-sucos,
+    .lista-salgados,
+    .lista-confeitaria {
+        gap: 18px;
+    }
+
+    .flip-card {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   13. CELULARES
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .inicio-cardapio {
+        padding: 65px 20px;
+    }
+
+    .inicio-cardapio h1 {
+        font-size: 38px;
+    }
+
+    .inicio-cardapio p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .explore {
+        font-size: 9px;
+    }
+
+    .cafes {
+        padding: 55px 20px;
+    }
+
+    .titulo-categoria {
+        margin-bottom: 45px;
+    }
+
+    .titulo-categoria h2 {
+        font-size: 37px;
+    }
+
+    .titulo-categoria p {
+        font-size: 12px;
+    }
+
+    .grupo-cafes,
+    .grupo-sucos,
+    .grupo-salgados,
+    .grupo-confeitaria {
+        margin-bottom: 45px;
+    }
+
+    .grupo-confeitaria {
+        margin-bottom: 0;
+    }
+
+    .grupo-cafes>h3,
+    .grupo-sucos>h3,
+    .grupo-salgados>h3,
+    .grupo-confeitaria>h3 {
+        font-size: 27px;
+    }
+
+    .lista-cafes,
+    .lista-sucos,
+    .lista-salgados,
+    .lista-confeitaria {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .flip-card {
+        width: 100%;
+        max-width: 380px;
+        height: 230px;
+        margin: 0 auto;
+    }
+
+    .frente h4 {
+        font-size: 27px;
+    }
+
+    .verso {
+        padding: 22px;
+    }
+
+    .verso h4 {
+        font-size: 25px;
+    }
+
+    .verso p {
+        font-size: 12px;
+    }
+
+    .rodape {
+        padding: 35px 25px 20px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .rodape-marca span {
+        line-height: 1.8;
+        letter-spacing: 1px;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        line-height: 1.8;
+    }
+
+}
+
+
+/* =========================================================
+   14. REDUÇÃO DE ANIMAÇÕES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .flip-inner,
+    .imagem-produto,
+    .flip-card,
+    .explore,
+    .seta,
+    .rodape-navegacao a {
+        transition: none;
+    }
+
+}
